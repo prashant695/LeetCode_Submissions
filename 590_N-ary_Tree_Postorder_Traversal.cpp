@@ -22,7 +22,7 @@ public:
 class Solution
 {
 public:
-    vector<int> preorder(Node *root)
+    vector<int> postorder(Node *root)
     {
         stack<Node *> q;
         vector<int> v;
@@ -33,28 +33,30 @@ public:
         {
             Node *t = q.top();
             q.pop();
-            for (int i = t->children.size() - 1; i >= 0; i--)
+            for (int i = 0; i < t->children.size(); i++)
                 q.push(t->children[i]);
             v.push_back(t->val);
         }
+        reverse(v.begin(), v.end());
         return v;
     }
 };
 
 // Recursive Method_2
+
 class Solution
 {
 public:
     vector<int> v;
-    vector<int> preorder(Node *root)
+    vector<int> postorder(Node *root)
     {
         if (root == NULL)
             return {};
-        v.push_back(root->val);
         for (int i = 0; i < root->children.size(); i++)
         {
-            preorder(root->children[i]);
+            postorder(root->children[i]);
         }
+        v.push_back(root->val);
         return v;
     }
 };
