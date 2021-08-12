@@ -22,7 +22,7 @@ public:
     }
 };
 
-// Method_1
+// Method_2
 // vector<pair<string, int>> v;
 
 
