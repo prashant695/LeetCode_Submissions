@@ -15,7 +15,7 @@ public:
 
         for (int i = 0; i < 26; i++)
         {
-            cout << m[i] << ' ';
+
             if (m[i] >= maxx)
             {
                 maxx = m[i];
