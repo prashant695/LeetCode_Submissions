@@ -1,32 +1,38 @@
-class CombinationIterator {
+class CombinationIterator
+{
 public:
-    vector<string>v;
-    int k=0;
-    void fun(string s, int i, string t, int num)
+    vector<string> res;
+    int curr_pos = 0;
+    void fun(string characters, int combinationLength, int i, string temp)
     {
 
-        if(t.size()==num)
+        if (temp.size() == combinationLength)
         {
-            v.push_back(t);
+            res.push_back(temp);
             return;
         }
-        for(int j=i;s[j];j++){
-            fun(s, j+1, t+s[j], num);
+        for (int j = i; characters[j]; j++)
+        {
+            fun(characters, combinationLength, j + 1, temp + characters[j]);
         }
     }
-    CombinationIterator(string characters, int combinationLength) {
-        fun(characters, 0, "", combinationLength);
+    CombinationIterator(string characters, int combinationLength)
+    {
+        fun(characters, combinationLength, 0, "");
     }
-    
-    string next() {
-        if(k<v.size()) 
-            return v[k++];
-        return "";
+
+    string next()
+    {
+        if (curr_pos >= res.size())
+            return "";
+        curr_pos++;
+        return res[curr_pos];
     }
-    
-    bool hasNext() {
-        if(k<v.size())
-           return 1;
-        return 0;
+
+    bool hasNext()
+    {
+        if (curr_pos >= res.size())
+            return false;
+        return true;
     }
 };
