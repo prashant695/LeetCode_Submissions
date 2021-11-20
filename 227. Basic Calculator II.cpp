@@ -30,9 +30,6 @@ public:
             s2.push_back(tmp);
         stack<string> st;
         for (int i = 0; i < s2.size(); i++)
-            cout << s2[i] << " ";
-        cout << endl;
-        for (int i = 0; i < s2.size(); i++)
         {
             if (s2[i] == "/")
             {
