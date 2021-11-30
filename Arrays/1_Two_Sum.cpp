@@ -1,7 +1,7 @@
-Basic Approach o(n2)
-Two pass map
-One pass map
-Method 4
+// Basic Approach o(n2)
+// Two pass map
+// One pass map
+// Method 4
 
 class Solution {
 public:
