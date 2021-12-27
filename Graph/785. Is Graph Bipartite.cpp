@@ -1,3 +1,5 @@
+
+// Coloring technique
 class Solution
 {
 public:
