@@ -13,20 +13,28 @@
 // Store the content of linked list in array/vector
 // Check for the array/vector to be a palindrome
 // Just smart way to solve not the best
-class Solution {
+class Solution
+{
 public:
-    bool isPalindrome(ListNode* head) {
-        string s="";
-        while(head){
-            s+=head->val;
-            head=head->next;
-        }
-        int i=0;
-        int j=s.size()-1;
-        while(i<j)
+    bool isPalindrome(ListNode *head)
+    {
+        string s = "";
+        while (head)
         {
-            if(s[i]!=s[j]) return false;
-            else{i++;j--;}
+            s += head->val;
+            head = head->next;
+        }
+        int i = 0;
+        int j = s.size() - 1;
+        while (i < j)
+        {
+            if (s[i] != s[j])
+                return false;
+            else
+            {
+                i++;
+                j--;
+            }
         }
         return true;
     }
@@ -43,7 +51,7 @@ public:
     {
         if (p == NULL)
             return 1;
-        if (!(ispali(p->next) and tmp->val == p->val))
+        if (!(ispali(p->next) an d tmp->val == p->val))
             return 0;
         tmp = tmp->next;
         return 1;
@@ -59,5 +67,3 @@ public:
 // Find the Middle of the linked list (Hare and Tortoise Approach)
 // Reverse the second half of the linked list
 // Check for the node values for the first half and second half to be equal
-
-
